@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="formId">
+        <h2>Register</h2>
+
+        <!-- form content -->
+        <div class="form-body">
+          <label for="username">Username</label>
+          <input type="text" placeholder="Enter username" />
+        </div>
+
+        <div class="form-body">
+          <label for="firstname">First Name</label>
+          <input type="text" placeholder="Enter firstname" />
+        </div>
+
+        <div class="form-body">
+          <label for="lastname">Last Name</label>
+          <input type="text" placeholder="Enter lastname" />
+        </div>
+
+        <div class="form-body">
+          <label for="dateofbirth">Date of Birth</label>
+          <input type="date" name="dateofbirth" id="dob" />
+        </div>
+
+        <div class="form-body">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="eg:user@mail.com"
+            required
+          />
+        </div>
+
+        <div class="form-body">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+
+        <div class="form-body">
+          <label for="confirmpassword">Re-enter Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+
+        <div class="form-body">
+          <button id="submit-btn" type="button">Submit</button>
+        </div>
+        <!-- end -->
+      </form>
+      <div id="message">Complete all fields!</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
