@@ -8,11 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get form values
     const username = document.getElementById("username").value.trim();
+    const firstname = document.getElementById("firstname").value.trim();
+    const lastname = document.getElementById("lastname").value.trim();
+    const dob = document.getElementById("dob").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
     // validation
-    if (!username || !email || !password) {
+    if (!username || !firstname || !lastname || !dob || !email || !password) {
       feedback.textContent = "Complete all fields!";
       return;
     }
