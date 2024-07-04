@@ -59,7 +59,7 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
+button:active {
   background-color: #377b7e;
   color: #fff;
   cursor: pointer;
@@ -69,4 +69,9 @@ button:hover {
 #message {
   color: red;
   text-align: center;
+}
+
+/* For mobile */
+@media (max-width: 450px) {
+
 }
