@@ -73,5 +73,8 @@ button:active {
 
 /* For mobile */
 @media (max-width: 450px) {
-
+  body {
+    display: inline-block;
+    margin: 0;
+  }
 }
