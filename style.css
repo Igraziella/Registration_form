@@ -13,12 +13,11 @@ body {
   align-items: center;
   background-color: #f4f4f4;
   height: 100vh;
-  margin: 100px;
+  margin: 5%;
 }
 
 .form-container {
   background-color: #6ebdc0;
-  gap: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -67,7 +66,6 @@ button:active {
 
 /* warning message */
 #message {
-  color: red;
   text-align: center;
 }
 
@@ -76,5 +74,6 @@ button:active {
   body {
     display: inline-block;
     margin: 0;
+    padding-bottom: 0;
   }
 }
