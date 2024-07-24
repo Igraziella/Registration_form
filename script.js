@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.input-error').forEach(input => input.classList.remove('input-error'));
 
     // Get form values
-    const username = document.getElementById("username").value.trim();
     const firstname = document.getElementById("firstname").value.trim();
     const lastname = document.getElementById("lastname").value.trim();
     const dob = document.getElementById("dob").value.trim();
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value.trim();
 
     // fields validation
-    if (!username || !firstname || !lastname || !dob || !email || !password) {
+    if (!firstname || !lastname || !dob || !email || !password) {
       feedback.textContent = "Complete all fields!";
       feedback.style.color = "red";
       feedback.classList.add("error");
@@ -37,19 +36,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!validateEmail(email)) {
-      feedback.textContent = "Please enter a valid email";
+      feedback.textcontent = "Please enter a valid email";
       feedback.style.color = "red"
       feedback.classList.add("error")
       document.getElementById("email").classList.add("input-error");
       return;
     }
-    
-    // on successful registration
-    feedback.textContent = "Registration successful";
-    feedback.style.color = "green";
-    feedback.classList.add("success");
 
-    // clear all form fields
-    form.reset();
+    const formData = new FormData(form);
+    fetch("https://formspree.io/f/xanwqlrp", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      // on successful registration
+      if (response.ok) {
+        feedback.textContent = "Registration successful";
+        feedback.style.color = "green";
+        feedback.classList.add("success");
+        
+        // clear all form fields
+        form.reset();
+      } else {
+        feedback.textContent = "There was a problem submitting your form. Please try again";
+        feedback.style.color = "red";
+        feedback.classList.add("error");
+      }
+    }).catch(error => {
+      feedback.textContent = "There was a problem submitting your form. Please try again";
+        feedback.style.color = "red";
+        feedback.classList.add("error");
+    });
+    
+    // alert("Registration successful");
+    
   });
 });
