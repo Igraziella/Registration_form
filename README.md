@@ -6,7 +6,7 @@
 
 ### screenshot
 
-![](./regform.PNG)
+![](./regImg.PNG)
 
 ## Author
 
